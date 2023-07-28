@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now</title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      input[type=text],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      input[type=email],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      input[type=number],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      input[type=date],
+      select,
+      textarea {
+        width: 47%;
+        padding: 12px;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h3>Contact Form</h3>
+
+    <div class="container">
+      <form method="post" action="/booking">
+        {% csrf_token %}
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email..">
+
+        <label for="number">Phone number</label>
+        <input type="number" id="phnumber" name="phnumber" placeholder="Enter your number..">
+
+        <label for="date">Form</label>
+        <input type="date" id="startdate" name="startdate" placeholder="Enter your starting date..">
+
+        <label for="date">To</label>
+        <input type="date" id="finishdate" name="finishdate" placeholder="Enter your finish date..">
+
+        <label for="country">Place</label>
+        <select id="country" name="country">
+          <option value="Kolkata">Kolkata</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="Agra">Agra</option>
+          <option value="Khajuraho">Khajuraho</option>
+          <option value="Hampi">Hampi</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Derjeeling">Derjeeling</option>
+          <option value="Belur">Belur</option>
+          <option value="Konark">Konark</option>
+          <option value="Kaziranga National Park">Kaziranga National Park</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+  </body>
+
+  </html>
+
+</body>
+
+</html>

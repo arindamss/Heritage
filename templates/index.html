@@ -1,0 +1,169 @@
+{% extends 'block1.html' %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block content %}
+    <style>
+        main {
+            min-height: 200vh;
+            background: white;
+
+        }
+
+        .co {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+
+            height: 100vh;
+            width: 40vw;
+            margin: auto;
+            
+        }
+
+        .box {
+            width: 341px;
+            height: 334px;
+            border: rgb(239, 239, 239) solid 2px;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .box .ak {
+            width: 318px;
+            height: 198px;
+            display: block;
+        }
+
+        .box a {
+            padding-top: 8px;
+            /* text-align: center; */
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .box a {
+            list-style: none;
+            color: rgb(121, 121, 121);
+            font: italic 1.2em "Courier New", "Courier", "monospace";
+            font-size: 33px;
+            font-style: oblique;
+            font-weight: 100;
+        }
+
+        .box p {
+            color: rgb(121, 121, 121);
+            text-align: center;
+            font-family: 'cursive';
+        }
+
+        .co :hover {
+            background: rgb(228 227 227);
+            border-radius: 2%;
+            border: rgb(235, 232, 232) 8px;
+
+        }
+
+        .co .box a:hover {
+            font-weight: bold;
+        }
+
+        footer {
+            width: 100vw;
+            height: 5vh;
+            background: #293f50;
+            text-align: center;
+            padding-top: 10px;
+            font-style: oblique;
+        }
+    </style>
+</head>
+<body>
+    <main id="heritage">
+        <div class="co" id="heritage">
+            <div class="box">
+                <img src="../static/kolkata.jpg" alt="" class="ak">
+
+                <a href="/kolkata">Kolkata</a>
+                <p>The City Of Joy, where the soul is fed and the heart is full.</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/jaipur.jpg" alt="" class="ak">
+
+                <a href="/jaipur">Jaipur</a>
+                <p>The pink city of India, where every corner tells a story</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/taj.jpg" alt="" class="ak">
+
+                <a href="#">Agra</a>
+                <p>Agra, where the Taj Mahal stands tall, and love reigns supreme.</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/khajuraho.jpg" alt="" class="ak">
+
+                <a href="#">Khajuraho</a>
+                <p>Khajuraho, where every stone tells a story of love, passion and devotion.</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/hampi.jpg" alt="" class="ak">
+
+                <a href="#">Hampi</a>
+                <p>In Hampi, history comes alive through its monuments and ruins.</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/delhi.jpg" alt="" class="ak">
+
+                <a href="#">Delhi</a>
+                <p>Delhi is a blend of old-world charm and modern chaos</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/darjeeling.jpg" alt="" class="ak">
+
+                <a href="#">Darjeeling</a>
+                <p>Darjeeling: where the mountains meet the sky, and the tea leaves dance in the breeze.</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/belur.jpg" alt="" class="ak">
+
+                <a href="#">Belur</a>
+                <p>Belur was the early capital of the Hoysala Empire in the 11th-century</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/Konark.jpg" alt="" class="ak">
+
+                <a href="#">Konark</a>
+                <p>Konark Sun Temple is more than just a temple, it is a work of art that tells the story of ancient
+                    Indian civilization.</p>
+
+            </div>
+            <div class="box">
+                <img src="../static/Kaziranga.jpg" alt="" class="ak">
+
+                <a href="#">Kaziranga National Park</a>
+                <p>Kaziranga National Park, one of the last areas in eastern India undisturbed by a human presence</p>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        Arindam &copy; 2023
+    </footer>
+    {% endblock  %}
+</body>
+</html>
