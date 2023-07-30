@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
+from django.template import loader
 from django.contrib.auth import authenticate, logout
 from home.models import Booking
 
@@ -38,7 +39,12 @@ def login(request):
         password=request.POST.get('psw')
         user = authenticate(username=username, password=password)
         if user is not None:
-            return render(request, 'admin.html')
+            blog =Booking.objects.all().values()
+            template=loader.get_template('admin.html')
+            context={
+                'blog':blog,
+            }
+            return HttpResponse(template.render(context,request))
         else:
             return render(request, 'login.html')
     return render(request, 'login.html')
@@ -46,8 +52,12 @@ def login(request):
 def admin(request):
     if request.user.is_anonymous:
         return redirect('login')
-    blog =Booking.objects.all()
-    return render(request,'admin.html', {'blogs':blog})
+    blog =Booking.objects.all().values()
+    template=loader.get_template('admin.html')
+    context={
+        'blog':blog,
+    }
+    return HttpResponse(template.render(context,request))
 
 def logoutuser(request):
     logout(request)
