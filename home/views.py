@@ -64,9 +64,10 @@ def logoutuser(request):
     return render(request, 'login.html')
 
 def details(request, country):
-    detl = Booking.objects.all().values().get(country=country)
+    detl = Booking.objects.all().values().filter(country=country)
     temp= loader.get_template('blog.html')
     context={
         'detl':detl
     }
     return HttpResponse(temp.render(context,request))
+    # return render(request, 'blog.html', detl)
