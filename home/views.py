@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.template import loader
 from django.contrib.auth import authenticate, logout
 from home.models import Booking
+from django.contrib import messages
 
 # Create your views here.
 
@@ -20,6 +21,7 @@ def booking(request):
         subject=request.POST.get('subject')
         book=Booking(firstname=firstname, lastname=lastname, email=email, phnumber=phnumber, startdate=startdate, finishdate=finishdate, country=country, subject=subject)
         book.save()
+        messages.success(request,"we will contect you soon..")
     return render(request,'booking.html')
 
 def gallery(request):
@@ -63,10 +65,12 @@ def logoutuser(request):
     logout(request)
     return render(request, 'login.html')
 
-def details(request,country):
-    blogs= Booking.objects.all().values().filter(country=country)
-    template=loader.get_template('details.html')
+def details_user(request,country):
+    detl= Booking.objects.all().values().filter(country=country)
+    # temp=loader.get_template('d1.html')
     context={
-        'blog':blogs
+        'detl':detl
     }
-    return HttpResponse(template,render(context,request))
+    # return HttpResponse(temp,render(context,request))
+    return render(request, 'details.html', context)
+    # return HttpResponse("I am in details")
