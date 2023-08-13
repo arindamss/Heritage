@@ -1,0 +1,18 @@
+{% extends 'admin_header.html' %}
+
+{% block title %}
+  Admin Dashbord - List of all city
+{% endblock %}
+
+
+{% block content %}
+  <div class="mycard">
+    <h1>City</h1>
+    <ul>
+      {% for x in blog %}
+        {% comment %} <li onclick="window.location = 'details/{{ x.country }}'">{{x.country}}</li> {% endcomment %}
+        <li><a href="details/{{x.country}}">{{x.country}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

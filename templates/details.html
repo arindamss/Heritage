@@ -1,0 +1,15 @@
+{% extends 'adminheader.html' %}
+
+{% block title %}
+MEMBER | {{blog.country}}
+{% endblock title %}
+
+{% block content %}
+{% for x in blog %}
+<div class="mycard">
+    <h1>{{ x.firstname }} {{ x.lastname }}</h1>
+    <p>Phone {{ mymember.phnumber }}</p>
+    <p>Member since: {{ x.startdate }}</p>
+</div>
+{% endfor %}
+{% endblock content %}
