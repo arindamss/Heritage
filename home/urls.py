@@ -11,7 +11,9 @@ urlpatterns = [
 
     path('login', views.login, name='login'),
     path('admin', views.admin, name='admin'),
-    path('logout', views.logoutuser, name='logout')
+    path('logout', views.logoutuser, name='logout'),
+
+    path('details/<str:country>',views.details,name='details')
 
     
 ]

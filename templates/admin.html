@@ -38,19 +38,20 @@
         </div>
     </div>
     <div class="cont">
-        
+        {% for x in blog %}
         <div class="row mb-2 blog">
             <div class="col-md-6">
                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
-                        <h3 class="mb-0"><a href="details/Kolkata">Kolkata</a></h3>
+                        <h3 class="mb-0"><a href="details/{{x.country}}">{{x.country}}</a></h3>
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
         
 
-        <div class="row mb-2 blog">
+        {% comment %} <div class="row mb-2 blog">
             <div class="col-md-6">
                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
@@ -140,7 +141,7 @@
             </div>
         </div>
                 
-
+ {% endcomment %}
 
 
     </div>

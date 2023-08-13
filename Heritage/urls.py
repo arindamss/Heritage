@@ -27,5 +27,7 @@ urlpatterns = [
 
     path('login', include('home.urls')),
     path('admin', include('home.urls')),
-    path('logout', include('home.urls'))
+    path('logout', include('home.urls')),
+
+    path('details/<str:country>',include('home.urls'))
 ]

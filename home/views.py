@@ -39,12 +39,12 @@ def login(request):
         password=request.POST.get('psw')
         user = authenticate(username=username, password=password)
         if user is not None:
-            blog =Booking.objects.all().values()
-            template=loader.get_template('admin.html')
+            blog =Booking.objects.all().values('country')
+            # template=loader.get_template('admin_details.html')
             context={
-                'blog':blog,
+                'blog':blog
             }
-            return HttpResponse(template.render(context,request))
+            return render(request, 'admin_details.html', context)
         else:
             return render(request, 'login.html')
     return render(request, 'login.html')
@@ -52,13 +52,21 @@ def login(request):
 def admin(request):
     if request.user.is_anonymous:
         return redirect('login')
-    blog =Booking.objects.all().values()
-    template=loader.get_template('admin.html')
+    blog =Booking.objects.all().values('country')
+    # template=loader.get_template('admin_details.html')
     context={
-        'blog':blog,
+        'blog':blog
     }
-    return HttpResponse(template.render(context,request))
+    return render(request, 'admin_details.html', context)
 
 def logoutuser(request):
     logout(request)
     return render(request, 'login.html')
+
+def details(request,country):
+    blogs= Booking.objects.all().values().filter(country=country)
+    template=loader.get_template('details.html')
+    context={
+        'blog':blogs
+    }
+    return HttpResponse(template,render(context,request))
