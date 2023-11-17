@@ -62,3 +62,6 @@ def admin(request):
 def logoutuser(request):
     logout(request)
     return render(request, 'login.html')
+
+
+# This change is made by Practice
